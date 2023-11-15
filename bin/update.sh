@@ -9,7 +9,7 @@ export KEYNAME=packaging@securedna.org
     set -e
     set -v
 
-    cd ../deb/
+    cd ./deb/
 
     # Packages & Packages.gz
     dpkg-scanpackages --multiversion . > Packages

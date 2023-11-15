@@ -1,12 +1,13 @@
 Package: securedna
-Version: 0.4.0
+Version: 0.3.2
 Architecture: amd64
-Maintainer: securedna
-Installed-Size: 20624
-Filename: ./securedna_0.4.0_amd64.deb
-Size: 6844876
-MD5sum: 6d80f42d87d0bc1360154b858917a3a7
-SHA1: 086708ffbb04cf3378e7f262aa269f37330c633c
-SHA256: 164e21f31f98c44ac48c4bc074386228957b2a4888da5a53bc748b8ca6427202
+Maintainer: SecureDNA Stiftung (SecureDNA Foundation)
+Installed-Size: 20066
+Depends: libc6 (>= 2.34), libssl3 (>= 3.0.2)
+Filename: ./securedna_0.3.2_amd64.deb
+Size: 6542462
+MD5sum: abfef428de97d0d480bbe2a4f9f5f281
+SHA1: 8193d939a129acc89226aad2930d13d062482415
+SHA256: a465b5202bb7a4cc311f7c44033ad9a542d1ee6743822b752b05b06e13b6a4ff
 Description: Securedna Client Package
 
