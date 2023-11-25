@@ -4,7 +4,7 @@ Architecture: amd64
 Maintainer: SecureDNA Stiftung (SecureDNA Foundation)
 Installed-Size: 20066
 Depends: libc6 (>= 2.34), libssl3 (>= 3.0.2)
-Filename: ./securedna_0.3.2_amd64.deb
+Filename: ./synthclient_0.3.2_amd64.deb
 Size: 6542462
 MD5sum: abfef428de97d0d480bbe2a4f9f5f281
 SHA1: 8193d939a129acc89226aad2930d13d062482415
