@@ -5,9 +5,11 @@ Maintainer: SecureDNA Stiftung (SecureDNA Foundation)
 Installed-Size: 20066
 Depends: libc6 (>= 2.34), libssl3 (>= 3.0.2)
 Filename: ./synthclient_0.3.2_amd64.deb
-Size: 6542466
-MD5sum: 70d75dc3f7914ea94bbee0f2c49393f5
-SHA1: 1bdb5f62d1f73a0a021b1444d7118fb8c110bc21
-SHA256: 78f1526ded75313d3050dbf7864ff1da06fffccb72f7e6511f0614c4d4270888
-Description: Securedna Client Package
+Size: 6542526
+MD5sum: 4b9f24b5db2d1a41b2371f82055121fc
+SHA1: b08f637d94338eea063c125e776bdcce50c3d4f9
+SHA256: b12dfe222716961965dc695407085731309ab95a33d8dd76a3e0d0d7137d3189
+Description: SecureDNA client
+ This is the client-side part of the SecureDNA synthesis screening system.
+ For more information, see https://securedna.org/
 
