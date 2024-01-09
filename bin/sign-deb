@@ -1,21 +1,29 @@
 #!/bin/bash
 
-### This script signs a .deb.  You must be sitting in the same directory as the .deb
-### and it must be unzipped from the artifact as generated on Github.  (This is likely
-### "artifact-deb" if you just unzipped & cd'ed.)  The keyring with the key in it
-### should be in a .gnupg directory and defaults to $HOME, but you can specify an
-### alternate location via optional $1.
+### This script signs a .deb.  It expects that you've unzipped the artifacts-deb.zip
+### file -into the .deb directory in the PPA repo-.  If you're still sitting in that
+### directory, it does the right thing; if you're instead at toplevel in the repo,
+### it also does the right thing.
+###
+### The keyring with the key in it should be in a .gnupg directory and defaults to $HOME,
+### but you can specify an alternate location via optional $1.
 
 set -e
 
 HOMEDIR="${1:-$HOME}"
 KEYNAME="packaging@securedna.org"
 
-# Packages & Packages.gz
-dpkg-scanpackages --multiversion . > Packages
-gzip --keep --force Packages
+## In a subprocess so as not to side-effect cwd.
+(
+    # Don't fuss over where we're run from.
+    if [[ "$(basename "$(pwd)")" != "deb" ]]; then cd deb; fi	# If this isn't right, "set -e" ensures we bail.
 
-# Release, Release.gpg & InRelease
-apt-ftparchive release . > Release
-gpg --homedir "$HOMEDIR" --default-key "${KEYNAME}" --armor --detach-sign --sign --output - Release > Release.gpg
-gpg --homedir "$HOMEDIR" --default-key "${KEYNAME}" --clearsign --output - Release > InRelease
+    # Packages & Packages.gz
+    dpkg-scanpackages --multiversion . > Packages
+    gzip --keep --force Packages
+
+    # Release, Release.gpg & InRelease
+    apt-ftparchive release . > Release
+    gpg --homedir "$HOMEDIR" --default-key "${KEYNAME}" --armor --detach-sign --sign --output - Release > Release.gpg
+    gpg --homedir "$HOMEDIR" --default-key "${KEYNAME}" --clearsign --output - Release > InRelease
+)
