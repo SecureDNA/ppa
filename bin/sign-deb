@@ -1,17 +1,21 @@
 #!/bin/bash
 
 ### This script signs a .deb.  It expects that you've unzipped the artifacts-deb.zip
-### file -into the .deb directory in the PPA repo-.  If you're still sitting in that
+### file *into the .deb directory in the PPA repo*.  If you're still sitting in that
 ### directory, it does the right thing; if you're instead at toplevel in the repo,
 ### it also does the right thing.
 ###
-### The keyring with the key in it should be in a .gnupg directory and defaults to $HOME,
-### but you can specify an alternate location via optional $1.
+### The keyring with the key in it should be in a .gnupg directory and defaults to $HOME/.gnupg,
+### but you can specify an alternate location via optional $1, aka somewhere/.gnupg.something.
+### (In other words, $1 is actually *the complete path to the relevant .gnupg directory*, not
+### the directory which itself contains a directory called .gnupg.)
 
 set -e
 
-HOMEDIR="${1:-$HOME}"
+HOMEDIR="${1:-$HOME/.gnupg}"
 KEYNAME="packaging@securedna.org"
+
+mygpg()  { gpg --pinentry-mode loopback --homedir "$HOMEDIR" --default-key "${KEYNAME}" "$@"; }
 
 ## In a subprocess so as not to side-effect cwd.
 (
@@ -24,6 +28,6 @@ KEYNAME="packaging@securedna.org"
 
     # Release, Release.gpg & InRelease
     apt-ftparchive release . > Release
-    gpg --homedir "$HOMEDIR" --default-key "${KEYNAME}" --armor --detach-sign --sign --output - Release > Release.gpg
-    gpg --homedir "$HOMEDIR" --default-key "${KEYNAME}" --clearsign --output - Release > InRelease
+    mygpg --armor --detach-sign --sign --output - Release > Release.gpg
+    mygpg --clearsign                  --output - Release > InRelease
 )
