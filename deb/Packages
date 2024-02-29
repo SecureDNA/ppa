@@ -1,14 +1,14 @@
 Package: synthclient
-Version: 1.0.0
+Version: 1.0.4
 Architecture: amd64
 Maintainer: SecureDNA Stiftung (SecureDNA Foundation)
-Installed-Size: 70976
+Installed-Size: 70072
 Depends: libc6 (>= 2.34), libssl3 (>= 3.0.2)
-Filename: ./synthclient_1.0.0_amd64.deb
-Size: 20371118
-MD5sum: 3625295c8003259c434f498eb57fefaf
-SHA1: cf28484ada4d2fe08f43d809741d478b16770e78
-SHA256: 2854eddf4bd2d810b509b7d6a1d64ebc414460e21f7a0278e5a9fa565fed4517
+Filename: ./synthclient_1.0.4_amd64.deb
+Size: 19732220
+MD5sum: 6d3c985b30a45711d6059589f03e0fc5
+SHA1: 15d8b176183befe547bc9fab8c384b4e36f8c671
+SHA256: 53d392a111ea8a409b518d96b8461dbb9ce78373a8d31a3e674662dc278fb26b
 Description: SecureDNA client
  This is the client-side part of the SecureDNA synthesis screening system,
  along with related utilities.  For more information, see https://securedna.org/
