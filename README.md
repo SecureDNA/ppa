@@ -1,5 +1,5 @@
 # PPA
-A PPA repository for SecureDNA packages.  Currently built Ubuntu amd64, and tested in 22.04 and later.
+A PPA repository for SecureDNA packages.  Currently built for Ubuntu amd64, and tested in 22.04 and later.
 
 SecureDNA is a free, non-profit screening platform designed to safeguard DNA synthesis everywhere.
 
