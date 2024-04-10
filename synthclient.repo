@@ -1,0 +1,6 @@
+[synthclient]
+name=synthclient
+baseurl=https://securedna.github.io/ppa/rpm
+enabled=1
+gpgcheck=1
+gpgkey=https://securedna.github.io/ppa/deb/securedna-keyring.gpg
