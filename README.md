@@ -13,10 +13,20 @@ This is a PPA repository for the SecureDNA client and related utilities.  Curren
 - Source for the client and servers is available in our [monorepo](https://github.com/SecureDNA/SecureDNA).
 
 ## Adding the PPA to your system and installing its contents
+For Debian/Ubuntu based linux systems
 
 ```bash
 curl -sSL https://securedna.github.io/ppa/deb/securedna-keyring.gpg | sudo tee /usr/share/keyrings/securedna-keyring.gpg > /dev/null
 echo "deb [signed-by=/usr/share/keyrings/securedna-keyring.gpg] https://securedna.github.io/ppa/deb ./" | sudo tee /etc/apt/sources.list.d/securedna.list > /dev/null
 sudo apt update
 sudo apt install synthclient
+```
+
+## Adding the RPM to your system and installing its contents
+For Redhat/Centos based linux systems
+
+```bash
+yum install yum-utils
+yum-config-manager --add-repo https://securedna.github.io/ppa/synthclient.repo
+yum install synthclient
 ```
