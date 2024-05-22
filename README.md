@@ -2,7 +2,8 @@
 SecureDNA is a free, non-profit screening platform designed to safeguard DNA synthesis everywhere.
 
 This is a PPA repository for the SecureDNA client and related utilities.  Currently built for x86/amd64 (Ubuntu 22.04 and later) and arm64 (Debian Bookworm and later).
-It also holds x86/amd64 Debian RPMs for CentOS Stream release 9 and later.
+
+It also holds x86/amd64 Red Hat RPMs for CentOS Stream release 9 and later.
 
 ## Overview
 
