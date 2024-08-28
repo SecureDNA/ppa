@@ -27,5 +27,12 @@ sudo apt install synthclient
 
 ```bash
 sudo rpmkeys --import https://securedna.github.io/ppa/rpm/securedna-keyring.asc
+```
+Then, depending on your architecture, one of
+```bash
 sudo yum install -y https://securedna.github.io/ppa/rpm/synthclient-latest.x86_64.rpm
+```
+or
+```bash
+sudo yum install -y https://securedna.github.io/ppa/rpm/synthclient-latest.aarch64.rpm
 ```
